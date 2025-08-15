@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: AudioLibrary
   m_EditorClassIdentifier: 
   clips:
-  - key: 
-    channel: 0
-    clip: {fileID: 0}
-    volume: 0
+  - key: OnClick
+    channel: 1
+    clip: {fileID: 8300000, guid: e4895e9a25cf56b469d178d7f5122f39, type: 3}
+    volume: 0.442
+    loop: 0
+  - key: OnDrag
+    channel: 1
+    clip: {fileID: 8300000, guid: 5895bc69cd13bd140b61117b494e3560, type: 3}
+    volume: 0.481
     loop: 0
