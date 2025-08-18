@@ -1,8 +1,8 @@
 {
     "version": "6.3.0",
     "projectId": "25cf7bcc16a03234c9bd68200ba66e30",
-    "applicationID": 30032,
-    "creativeName": "",
+    "applicationID": 32259,
+    "creativeName": "KeyPoints_Mip",
     "pgServer": "EU",
     "window": {
         "‐″": true
@@ -29912,7 +29912,7 @@
                     },
                     {
                         "name": "StopMusic$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "StopMusic",
@@ -29932,7 +29932,7 @@
                     },
                     {
                         "name": "CrossfadeMusic",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "FadeOutAndStop",

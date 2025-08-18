@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public GameObject handle1;
     public Animator animator;
     public GameObject maskA;
+    public GameObject filter;
 
     private void Awake()
     {
@@ -102,6 +103,7 @@ public class GameManager : MonoBehaviour
 
     public void SummarizeText()
     {
+        AudioManager.Instance.PlayMusic("1");
         if (hand.gameObject.activeInHierarchy)
         {
             hand.gameObject.SetActive(false);
@@ -125,14 +127,18 @@ public class GameManager : MonoBehaviour
             handle1.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
             TextToSummarize.gameObject.SetActive(true);
             TextToSummarize.GetComponent<CanvasGroupAnimator>().TriggerAnimateIn();
+            filter.gameObject.SetActive(true);
+            filter.GetComponent<CanvasGroupAnimator>().TriggerAnimateIn();
             TaskManager.Instance.RunAfter(1f, () =>
             {
                 AudioManager.Instance.PlaySFX("OnDrag");
                 animator.SetTrigger("StartMaskAnimate");
             });
 
-            TaskManager.Instance.RunAfter(4.5f, () =>
+            TaskManager.Instance.RunAfter(5f, () =>
             {
+                AudioManager.Instance.StopMusic();
+                AudioManager.Instance.PlayMusic("5");
                 endPanel.gameObject.SetActive(true);
                 endPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
             });

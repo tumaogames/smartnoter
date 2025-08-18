@@ -1,5 +1,5 @@
 /**
- * @version 1.0.9358.36301
+ * @version 1.0.9361.23292
  * @copyright anton
  * @compiler Bridge.NET 17.9.42-luna
  */
@@ -3268,7 +3268,8 @@ Bridge.assembly("UnityScriptsCompiler", function ($asm, globals) {
             mainPanel: null,
             handle1: null,
             animator: null,
-            maskA: null
+            maskA: null,
+            filter: null
         },
         props: {
             CurrentScore: {
@@ -3408,6 +3409,7 @@ Bridge.assembly("UnityScriptsCompiler", function ($asm, globals) {
 
             /*GameManager.SummarizeText start.*/
             SummarizeText: function () {
+                AudioManager.Instance.PlayMusic("1");
                 if (this.hand.gameObject.activeInHierarchy) {
                     this.hand.gameObject.SetActive(false);
                 }
@@ -3428,12 +3430,16 @@ Bridge.assembly("UnityScriptsCompiler", function ($asm, globals) {
                     this.handle1.GetComponent(CanvasGroupAnimator).TriggerAnimate();
                     this.TextToSummarize.gameObject.SetActive(true);
                     this.TextToSummarize.GetComponent(CanvasGroupAnimator).TriggerAnimateIn();
+                    this.filter.gameObject.SetActive(true);
+                    this.filter.GetComponent(CanvasGroupAnimator).TriggerAnimateIn();
                     TaskManager.Instance.RunAfter(1.0, Bridge.fn.bind(this, function () {
                         AudioManager.Instance.PlaySFX("OnDrag");
                         this.animator.SetTrigger$1("StartMaskAnimate");
                     }));
 
-                    TaskManager.Instance.RunAfter(4.5, Bridge.fn.bind(this, function () {
+                    TaskManager.Instance.RunAfter(5.0, Bridge.fn.bind(this, function () {
+                        AudioManager.Instance.StopMusic$1();
+                        AudioManager.Instance.PlayMusic("5");
                         this.endPanel.gameObject.SetActive(true);
                         this.endPanel.GetComponent(CanvasGroupAnimator).TriggerAnimate();
                     }));
@@ -5108,7 +5114,7 @@ Bridge.assembly("UnityScriptsCompiler", function ($asm, globals) {
     /*CanvasGroupAnimator end.*/
 
     /*GameManager start.*/
-    $m("GameManager", function () { return {"nested":[GameManager.GameState],"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"Awake","t":8,"sn":"Awake","rt":$n[0].Void},{"a":2,"n":"CTAClicked","t":8,"sn":"CTAClicked","rt":$n[0].Void},{"a":2,"n":"ChangeState","t":8,"pi":[{"n":"newState","pt":GameManager.GameState,"ps":0}],"sn":"ChangeState","rt":$n[0].Void,"p":[GameManager.GameState]},{"a":1,"n":"DestroyHandObj","t":8,"sn":"DestroyHandObj","rt":$n[3].IEnumerator},{"a":2,"n":"RestartGame","t":8,"sn":"RestartGame","rt":$n[0].Void},{"a":1,"n":"Start","t":8,"sn":"Start","rt":$n[0].Void},{"a":2,"n":"StartMusic","t":8,"sn":"StartMusic","rt":$n[0].Void},{"a":2,"n":"SummarizeText","t":8,"sn":"SummarizeText","rt":$n[0].Void},{"a":2,"n":"Win","t":8,"sn":"Win","rt":$n[3].IEnumerator},{"a":2,"n":"CurrentScore","t":16,"rt":$n[0].Int32,"g":{"a":2,"n":"get_CurrentScore","t":8,"rt":$n[0].Int32,"fg":"CurrentScore","box":function ($v) { return Bridge.box($v, System.Int32);}},"s":{"a":2,"n":"set_CurrentScore","t":8,"p":[$n[0].Int32],"rt":$n[0].Void,"fs":"CurrentScore"},"fn":"CurrentScore"},{"a":2,"n":"CurrentState","t":16,"rt":GameManager.GameState,"g":{"a":2,"n":"get_CurrentState","t":8,"rt":GameManager.GameState,"fg":"CurrentState","box":function ($v) { return Bridge.box($v, GameManager.GameState, System.Enum.toStringFn(GameManager.GameState));}},"s":{"a":1,"n":"set_CurrentState","t":8,"p":[GameManager.GameState],"rt":$n[0].Void,"fs":"CurrentState"},"fn":"CurrentState"},{"a":2,"n":"Instance","is":true,"t":4,"rt":GameManager,"sn":"Instance"},{"a":2,"n":"SummarizedText","t":4,"rt":$n[2].GameObject,"sn":"SummarizedText"},{"a":2,"n":"TextToSummarize","t":4,"rt":$n[2].GameObject,"sn":"TextToSummarize"},{"a":2,"n":"animator","t":4,"rt":$n[2].Animator,"sn":"animator"},{"a":2,"n":"currentScore","t":4,"rt":$n[0].Int32,"sn":"currentScore","box":function ($v) { return Bridge.box($v, System.Int32);}},{"a":2,"n":"enableSound","t":4,"rt":$n[0].Boolean,"sn":"enableSound","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":2,"n":"end","t":4,"rt":$n[0].Boolean,"sn":"end","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":2,"n":"endPanel","t":4,"rt":$n[2].GameObject,"sn":"endPanel"},{"a":2,"n":"hand","t":4,"rt":$n[2].GameObject,"sn":"hand"},{"a":2,"n":"handle1","t":4,"rt":$n[2].GameObject,"sn":"handle1"},{"a":2,"n":"mainPanel","t":4,"rt":$n[2].GameObject,"sn":"mainPanel"},{"a":2,"n":"maskA","t":4,"rt":$n[2].GameObject,"sn":"maskA"},{"a":2,"n":"startClickHandler","t":4,"rt":StartClickHandler,"sn":"startClickHandler"},{"a":2,"n":"summaryBtn","t":4,"rt":$n[2].GameObject,"sn":"summaryBtn"},{"a":2,"n":"summaryBtnBlue","t":4,"rt":$n[2].GameObject,"sn":"summaryBtnBlue"},{"a":2,"n":"transcriptBtn","t":4,"rt":$n[2].GameObject,"sn":"transcriptBtn"},{"a":2,"n":"transcriptBtnBlue","t":4,"rt":$n[2].GameObject,"sn":"transcriptBtnBlue"},{"a":1,"backing":true,"n":"<CurrentState>k__BackingField","t":4,"rt":GameManager.GameState,"sn":"CurrentState","box":function ($v) { return Bridge.box($v, GameManager.GameState, System.Enum.toStringFn(GameManager.GameState));}}]}; }, $n);
+    $m("GameManager", function () { return {"nested":[GameManager.GameState],"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"Awake","t":8,"sn":"Awake","rt":$n[0].Void},{"a":2,"n":"CTAClicked","t":8,"sn":"CTAClicked","rt":$n[0].Void},{"a":2,"n":"ChangeState","t":8,"pi":[{"n":"newState","pt":GameManager.GameState,"ps":0}],"sn":"ChangeState","rt":$n[0].Void,"p":[GameManager.GameState]},{"a":1,"n":"DestroyHandObj","t":8,"sn":"DestroyHandObj","rt":$n[3].IEnumerator},{"a":2,"n":"RestartGame","t":8,"sn":"RestartGame","rt":$n[0].Void},{"a":1,"n":"Start","t":8,"sn":"Start","rt":$n[0].Void},{"a":2,"n":"StartMusic","t":8,"sn":"StartMusic","rt":$n[0].Void},{"a":2,"n":"SummarizeText","t":8,"sn":"SummarizeText","rt":$n[0].Void},{"a":2,"n":"Win","t":8,"sn":"Win","rt":$n[3].IEnumerator},{"a":2,"n":"CurrentScore","t":16,"rt":$n[0].Int32,"g":{"a":2,"n":"get_CurrentScore","t":8,"rt":$n[0].Int32,"fg":"CurrentScore","box":function ($v) { return Bridge.box($v, System.Int32);}},"s":{"a":2,"n":"set_CurrentScore","t":8,"p":[$n[0].Int32],"rt":$n[0].Void,"fs":"CurrentScore"},"fn":"CurrentScore"},{"a":2,"n":"CurrentState","t":16,"rt":GameManager.GameState,"g":{"a":2,"n":"get_CurrentState","t":8,"rt":GameManager.GameState,"fg":"CurrentState","box":function ($v) { return Bridge.box($v, GameManager.GameState, System.Enum.toStringFn(GameManager.GameState));}},"s":{"a":1,"n":"set_CurrentState","t":8,"p":[GameManager.GameState],"rt":$n[0].Void,"fs":"CurrentState"},"fn":"CurrentState"},{"a":2,"n":"Instance","is":true,"t":4,"rt":GameManager,"sn":"Instance"},{"a":2,"n":"SummarizedText","t":4,"rt":$n[2].GameObject,"sn":"SummarizedText"},{"a":2,"n":"TextToSummarize","t":4,"rt":$n[2].GameObject,"sn":"TextToSummarize"},{"a":2,"n":"animator","t":4,"rt":$n[2].Animator,"sn":"animator"},{"a":2,"n":"currentScore","t":4,"rt":$n[0].Int32,"sn":"currentScore","box":function ($v) { return Bridge.box($v, System.Int32);}},{"a":2,"n":"enableSound","t":4,"rt":$n[0].Boolean,"sn":"enableSound","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":2,"n":"end","t":4,"rt":$n[0].Boolean,"sn":"end","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":2,"n":"endPanel","t":4,"rt":$n[2].GameObject,"sn":"endPanel"},{"a":2,"n":"filter","t":4,"rt":$n[2].GameObject,"sn":"filter"},{"a":2,"n":"hand","t":4,"rt":$n[2].GameObject,"sn":"hand"},{"a":2,"n":"handle1","t":4,"rt":$n[2].GameObject,"sn":"handle1"},{"a":2,"n":"mainPanel","t":4,"rt":$n[2].GameObject,"sn":"mainPanel"},{"a":2,"n":"maskA","t":4,"rt":$n[2].GameObject,"sn":"maskA"},{"a":2,"n":"startClickHandler","t":4,"rt":StartClickHandler,"sn":"startClickHandler"},{"a":2,"n":"summaryBtn","t":4,"rt":$n[2].GameObject,"sn":"summaryBtn"},{"a":2,"n":"summaryBtnBlue","t":4,"rt":$n[2].GameObject,"sn":"summaryBtnBlue"},{"a":2,"n":"transcriptBtn","t":4,"rt":$n[2].GameObject,"sn":"transcriptBtn"},{"a":2,"n":"transcriptBtnBlue","t":4,"rt":$n[2].GameObject,"sn":"transcriptBtnBlue"},{"a":1,"backing":true,"n":"<CurrentState>k__BackingField","t":4,"rt":GameManager.GameState,"sn":"CurrentState","box":function ($v) { return Bridge.box($v, GameManager.GameState, System.Enum.toStringFn(GameManager.GameState));}}]}; }, $n);
     /*GameManager end.*/
 
     /*GameManager+GameState start.*/
