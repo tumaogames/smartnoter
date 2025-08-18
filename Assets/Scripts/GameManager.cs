@@ -55,7 +55,8 @@ public class GameManager : MonoBehaviour
     public IEnumerator Win()
     {
         yield return new WaitForSeconds(1);
-        endPanel.SetActive(true);
+        endPanel.gameObject.SetActive(true);
+        endPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
         end = true;
     }
 
