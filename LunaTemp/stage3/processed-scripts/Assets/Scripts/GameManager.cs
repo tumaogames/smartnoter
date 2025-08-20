@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public Animator animator;
     public GameObject maskA;
     public GameObject filter;
+    public GameObject arrow;
 
     private void Awake()
     {
@@ -110,7 +111,7 @@ public class GameManager : MonoBehaviour
         }
         AudioManager.Instance.PlaySFX("OnClick");
         TextToSummarize.GetComponent<CanvasGroupAnimator>().TriggerAnimateOut();
-        TaskManager.Instance.RunAfter(0.3f, () =>
+        TaskManager.Instance.RunAfter(1f, () =>
         {
             SummarizedText.SetActive(true);
             SummarizedText.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
@@ -120,7 +121,7 @@ public class GameManager : MonoBehaviour
             transcriptBtnBlue.SetActive(false);
         });
 
-        TaskManager.Instance.RunAfter(1f, () =>
+        TaskManager.Instance.RunAfter(2f, () =>
         {
             mainPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimateOut();
             handle1.SetActive(true);
@@ -132,10 +133,10 @@ public class GameManager : MonoBehaviour
             TaskManager.Instance.RunAfter(1f, () =>
             {
                 AudioManager.Instance.PlaySFX("OnDrag");
-                animator.SetTrigger("StartMaskAnimate");
+                //animator.SetTrigger("StartMaskAnimate");
             });
 
-            TaskManager.Instance.RunAfter(5f, () =>
+            TaskManager.Instance.RunAfter(8f, () =>
             {
                 AudioManager.Instance.StopMusic();
                 AudioManager.Instance.PlayMusic("5");
