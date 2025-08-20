@@ -1,5 +1,5 @@
 /**
- * @version 1.0.9363.26555
+ * @version 1.0.9363.28547
  * @copyright anton
  * @compiler Bridge.NET 17.9.42-luna
  */
@@ -3433,6 +3433,7 @@ Bridge.assembly("UnityScriptsCompiler", function ($asm, globals) {
                                 }
                                 case 1: {
                                     this.endPanel.SetActive(true);
+                                        this.endPanel.GetComponent(CanvasGroupAnimator).TriggerAnimate();
                                         this.end = true;
 
                                 }
@@ -3616,15 +3617,17 @@ Bridge.assembly("UnityScriptsCompiler", function ($asm, globals) {
 
             /*StartClickHandler.EnableSound start.*/
             EnableSound: function () {
-                AudioManager.Instance.PlayMusic("OnZoom");
+                //AudioManager.Instance.PlayMusic("OnZoom");
                 this.GetComponent(UnityEngine.UI.Image).raycastTarget = false;
-                GameManager.Instance.StartMusic();
+                //GameManager.Instance.StartMusic();
                 if (UnityEngine.Component.op_Inequality(this.transform.parent, null)) {
-                    this.transform.parent.gameObject.SetActive(false);
+                    //transform.parent.gameObject.SetActive(false);
                 }
                 GameManager.Instance.hand.gameObject.SetActive(false);
-                this.gameObject.SetActive(false);
-                GameManager.Instance.enableSound = true;
+                //gameObject.SetActive(false);
+                //GameManager.Instance.enableSound = true;
+                GameManager.Instance.CTAClicked();
+                this.StartCoroutine$1(GameManager.Instance.Win());
             },
             /*StartClickHandler.EnableSound end.*/
 
