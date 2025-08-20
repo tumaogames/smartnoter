@@ -23,28 +23,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5895bc69cd13bd140b61117b494e3560, type: 3}
     volume: 0.481
     loop: 0
-  - key: 1
+  - key: OnZoom
     channel: 0
-    clip: {fileID: 8300000, guid: b4d1a4de03798114ab84f25a1a449502, type: 3}
-    volume: 0.481
-    loop: 0
-  - key: 2
-    channel: 0
-    clip: {fileID: 8300000, guid: bff1dc6d9e6c4bf44ac9bd450440419b, type: 3}
-    volume: 0.481
-    loop: 0
-  - key: 3
-    channel: 0
-    clip: {fileID: 8300000, guid: 9b1014b40f4169740a6d88c0a3756f01, type: 3}
-    volume: 0.481
-    loop: 0
-  - key: 4
-    channel: 0
-    clip: {fileID: 8300000, guid: 9e420d2e521c6484a99589eb0155f49e, type: 3}
-    volume: 0.481
-    loop: 0
-  - key: 5
-    channel: 0
-    clip: {fileID: 8300000, guid: 5967693aa4aa6b249bb99621eea3aadd, type: 3}
+    clip: {fileID: 8300000, guid: 43dbe2504e91f634490a0b930c9538d4, type: 3}
     volume: 0.481
     loop: 0

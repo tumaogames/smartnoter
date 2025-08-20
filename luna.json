@@ -6283,10 +6283,6 @@
                 "excluded": true
             },
             {
-                "name": "UnityEngine.UI.ClipperRegistry",
-                "excluded": true
-            },
-            {
                 "name": "UnityEngine.UI.Clipping",
                 "excluded": true
             },
@@ -6311,15 +6307,7 @@
                 "excluded": true
             },
             {
-                "name": "UnityEngine.UI.RectangularVertexClipper",
-                "excluded": true
-            },
-            {
                 "name": "UnityEngine.UI.ReflectionMethodsCache",
-                "excluded": true
-            },
-            {
-                "name": "UnityEngine.UI.SetPropertyUtility",
                 "excluded": true
             },
             {
@@ -6376,10 +6364,6 @@
             },
             {
                 "name": "UnityEngine.UI.Outline",
-                "excluded": true
-            },
-            {
-                "name": "UnityEngine.UI.Scrollbar",
                 "excluded": true
             },
             {
@@ -6488,27 +6472,27 @@
             },
             {
                 "name": "UnityEngine.UI.Scrollbar.Axis",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.UI.Scrollbar.Direction",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.UI.Scrollbar.ScrollEvent",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.UI.ScrollRect.MovementType",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.UI.ScrollRect.ScrollbarVisibility",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.UI.ScrollRect.ScrollRectEvent",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.UI.Slider.Axis",
@@ -15672,7 +15656,7 @@
                     },
                     {
                         "name": "SmoothDamp$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "SmoothDampAngle$1",
@@ -15860,7 +15844,7 @@
                     },
                     {
                         "name": "center#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "center#set",
@@ -15896,7 +15880,7 @@
                     },
                     {
                         "name": "position#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "position#set",
@@ -17636,7 +17620,7 @@
                     },
                     {
                         "name": "HandleEndOfFrame",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "MoveNext",
@@ -18932,7 +18916,7 @@
                     },
                     {
                         "name": "worldToLocalMatrix#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "localToWorldMatrix#get",
@@ -18940,7 +18924,7 @@
                     },
                     {
                         "name": "localPosition#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "localPosition#set",
@@ -19084,7 +19068,7 @@
                     },
                     {
                         "name": "cachedLocalToWorldMatrix#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
@@ -20532,7 +20516,7 @@
                     },
                     {
                         "name": "anchorMax#set",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "anchorMin#get",
@@ -20612,7 +20596,7 @@
                     },
                     {
                         "name": "GetWorldCorners",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetLocalCorners",
@@ -22032,7 +22016,7 @@
                     },
                     {
                         "name": "ForceUpdateCanvases",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "pixelRect#get",
@@ -22440,7 +22424,7 @@
                     },
                     {
                         "name": "init",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "getItem",
@@ -22456,7 +22440,7 @@
                     },
                     {
                         "name": "AddUnique",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "remove",
@@ -22722,7 +22706,7 @@
                 "instanceMethods": [
                     {
                         "name": "Notify2DMaskStateChanged",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "NotifyStencilStateChanged",
@@ -22738,7 +22722,7 @@
                     },
                     {
                         "name": "IsDescendantOrSelf",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetRectMaskForClippable",
@@ -23634,15 +23618,15 @@
                     },
                     {
                         "name": "init",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnEnable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnDisable",
@@ -23658,7 +23642,7 @@
                     },
                     {
                         "name": "AddClippable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "RemoveClippable",
@@ -29762,7 +29746,7 @@
                     },
                     {
                         "name": "CTAClicked",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ChangeState",
@@ -30302,7 +30286,7 @@
                     },
                     {
                         "name": "RectangleContainsScreenPoint$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "RectangleContainsScreenPoint",
@@ -32637,6 +32621,238 @@
                     {
                         "name": "OnDrag",
                         "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.UI.ClipperRegistry",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "instance#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Register",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Unregister",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Cull",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.UI.RectangularVertexClipper",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetCanvasRect",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.UI.SetPropertyUtility",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "SetColor",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetStruct",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetClass",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.UI.Scrollbar",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "handleRect#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "handleRect#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "direction#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "direction#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "value#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "value#set",
+                        "excluded": false
+                    },
+                    {
+                        "name": "size#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "size#set",
+                        "excluded": false
+                    },
+                    {
+                        "name": "numberOfSteps#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "numberOfSteps#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "stepSize#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "axis#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "reverseValue#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDisable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnRectTransformDimensionsChange",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnBeginDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Rebuild",
+                        "excluded": true
+                    },
+                    {
+                        "name": "LayoutComplete",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GraphicUpdateComplete",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnInitializePotentialDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetValueWithoutNotify",
+                        "excluded": true
+                    },
+                    {
+                        "name": "UpdateCachedReferences",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Set",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UpdateVisuals",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UpdateDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DoUpdateDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MayDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPointerDown",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ClickRepeat",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPointerUp",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnMove",
+                        "excluded": true
+                    },
+                    {
+                        "name": "FindSelectableOnLeft",
+                        "excluded": true
+                    },
+                    {
+                        "name": "FindSelectableOnRight",
+                        "excluded": true
+                    },
+                    {
+                        "name": "FindSelectableOnUp",
+                        "excluded": true
+                    },
+                    {
+                        "name": "FindSelectableOnDown",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetDirection",
+                        "excluded": true
                     }
                 ]
             }

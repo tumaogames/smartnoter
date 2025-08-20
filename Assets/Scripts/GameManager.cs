@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public GameObject TextToSummarize;
+    public GameObject BodyToSummarize;
     public GameObject SummarizedText;
 
     public GameObject transcriptBtnBlue;
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public GameObject maskA;
     public GameObject filter;
     public GameObject arrow;
+    public GameObject toTap;
 
     private void Awake()
     {
@@ -104,15 +105,16 @@ public class GameManager : MonoBehaviour
 
     public void SummarizeText()
     {
-        AudioManager.Instance.PlayMusic("1");
+        startClickHandler.EnableSound();
         if (hand.gameObject.activeInHierarchy)
         {
             hand.gameObject.SetActive(false);
         }
         AudioManager.Instance.PlaySFX("OnClick");
-        TextToSummarize.GetComponent<CanvasGroupAnimator>().TriggerAnimateOut();
+        BodyToSummarize.GetComponent<CanvasGroupAnimator>().TriggerAnimateOut();
         TaskManager.Instance.RunAfter(1f, () =>
         {
+            toTap.GetComponent<Canvas>().sortingOrder = 40;
             SummarizedText.SetActive(true);
             SummarizedText.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
             //summaryBtn.SetActive(false);
@@ -126,8 +128,8 @@ public class GameManager : MonoBehaviour
             //mainPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimateOut();
             handle1.SetActive(true);
             handle1.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
-            TextToSummarize.gameObject.SetActive(true);
-            TextToSummarize.GetComponent<CanvasGroupAnimator>().TriggerAnimateIn();
+            BodyToSummarize.gameObject.SetActive(true);
+            BodyToSummarize.GetComponent<CanvasGroupAnimator>().TriggerAnimateIn();
             filter.gameObject.SetActive(true);
             filter.GetComponent<CanvasGroupAnimator>().TriggerAnimateIn();
             TaskManager.Instance.RunAfter(1f, () =>
@@ -136,10 +138,8 @@ public class GameManager : MonoBehaviour
                 //animator.SetTrigger("StartMaskAnimate");
             });
 
-            TaskManager.Instance.RunAfter(8f, () =>
+            TaskManager.Instance.RunAfter(60f, () =>
             {
-                AudioManager.Instance.StopMusic();
-                AudioManager.Instance.PlayMusic("5");
                 endPanel.gameObject.SetActive(true);
                 endPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
             });
