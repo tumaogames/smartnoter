@@ -25,7 +25,7 @@ public class StartClickHandler : MonoBehaviour, IPointerDownHandler
 
     public void EnableSound()
     {
-        AudioManager.Instance.PlayMusic("OnZoom");
+        AudioManager.Instance.PlayMusic("OnZoomShort");
         this.GetComponent<Image>().raycastTarget = false;
         GameManager.Instance.StartMusic();
         if (transform.parent != null)

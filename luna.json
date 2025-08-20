@@ -32918,8 +32918,8 @@
                 "default": {
                     "channels": 1,
                     "startTime": "00:00.000",
-                    "endTime": "00:30.000",
-                    "lengthInSeconds": 30.0,
+                    "endTime": "00:35.000",
+                    "lengthInSeconds": 35.0,
                     "bitrate": 128,
                     "script": "",
                     "ext": ""

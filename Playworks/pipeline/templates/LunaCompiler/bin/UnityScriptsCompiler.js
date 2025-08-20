@@ -1,5 +1,5 @@
 /**
- * @version 1.0.9363.26555
+ * @version 1.0.9363.27720
  * @copyright anton
  * @compiler Bridge.NET 17.9.42-luna
  */
@@ -3552,7 +3552,7 @@ Bridge.assembly("UnityScriptsCompiler", function ($asm, globals) {
                         //animator.SetTrigger("StartMaskAnimate");
                     });
 
-                    TaskManager.Instance.RunAfter(60.0, Bridge.fn.bind(this, function () {
+                    TaskManager.Instance.RunAfter(35.0, Bridge.fn.bind(this, function () {
                         this.endPanel.gameObject.SetActive(true);
                         this.endPanel.GetComponent(CanvasGroupAnimator).TriggerAnimate();
                     }));
@@ -3616,7 +3616,7 @@ Bridge.assembly("UnityScriptsCompiler", function ($asm, globals) {
 
             /*StartClickHandler.EnableSound start.*/
             EnableSound: function () {
-                AudioManager.Instance.PlayMusic("OnZoom");
+                AudioManager.Instance.PlayMusic("OnZoomShort");
                 this.GetComponent(UnityEngine.UI.Image).raycastTarget = false;
                 GameManager.Instance.StartMusic();
                 if (UnityEngine.Component.op_Inequality(this.transform.parent, null)) {

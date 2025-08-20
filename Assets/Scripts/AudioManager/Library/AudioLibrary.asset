@@ -28,3 +28,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 43dbe2504e91f634490a0b930c9538d4, type: 3}
     volume: 0.481
     loop: 0
+  - key: OnZoomShort
+    channel: 0
+    clip: {fileID: 8300000, guid: bffaf5c6870598c4e933f157d45b380f, type: 3}
+    volume: 0.481
+    loop: 0

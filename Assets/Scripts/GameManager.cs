@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
                 //animator.SetTrigger("StartMaskAnimate");
             });
 
-            TaskManager.Instance.RunAfter(60f, () =>
+            TaskManager.Instance.RunAfter(35f, () =>
             {
                 endPanel.gameObject.SetActive(true);
                 endPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
