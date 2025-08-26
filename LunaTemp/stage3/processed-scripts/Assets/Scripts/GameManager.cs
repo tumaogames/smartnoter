@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         endPanel.SetActive(true);
+        endPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
         end = true;
     }
 

@@ -29742,7 +29742,7 @@
                     },
                     {
                         "name": "Win",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DestroyHandObj",
