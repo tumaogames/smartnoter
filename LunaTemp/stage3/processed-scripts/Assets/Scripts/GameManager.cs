@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
     {
         StartVoiceOver();
         startClickHandler.EnableSound();
-        TaskManager.Instance.RunAfter(60f, () =>
+        TaskManager.Instance.RunAfter(35f, () =>
         {
             summaryBtn.GetComponent<Button>().interactable = true;
             hand2.gameObject.SetActive(true);
@@ -129,7 +129,6 @@ public class GameManager : MonoBehaviour
 
     public void SummarizeText()
     {
-        startClickHandler.EnableSound();
         if (hand.gameObject.activeInHierarchy)
         {
             hand.gameObject.SetActive(false);
