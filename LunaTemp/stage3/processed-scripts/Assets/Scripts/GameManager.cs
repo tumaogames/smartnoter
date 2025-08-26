@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour
     public void SummarizeText1()
     {
         StartVoiceOver();
+        AudioManager.Instance.PlaySFX("OnClick");
         startClickHandler.EnableSound();
         TaskManager.Instance.RunAfter(60f, () =>
         {
