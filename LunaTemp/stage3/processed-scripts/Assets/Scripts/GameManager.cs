@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject endPanel;
     public bool end;
     public GameObject hand;
+    public GameObject hand2;
     public bool enableSound;
     public StartClickHandler startClickHandler;
     public enum GameState { MainMenu, Playing, Paused, GameOver }
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
     public GameObject filter;
     public GameObject arrow;
     public GameObject toTap;
+    public GameObject openingPanel;
 
     private void Awake()
     {
@@ -53,6 +56,7 @@ public class GameManager : MonoBehaviour
     {
         ChangeState(GameState.MainMenu);
         animator = maskA.GetComponent<Animator>();
+        summaryBtn.GetComponent<Button>().interactable = false;
     }
 
     public IEnumerator Win()
@@ -103,6 +107,25 @@ public class GameManager : MonoBehaviour
         ChangeState(GameState.Playing);
     }
 
+    public void StartVoiceOver()
+    {
+        openingPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimateOut();
+        mainPanel.gameObject.SetActive(true);
+        mainPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimateIn();
+        ChangeState(GameState.Playing);
+    }
+    public void SummarizeText1()
+    {
+        StartVoiceOver();
+        startClickHandler.EnableSound();
+        TaskManager.Instance.RunAfter(60f, () =>
+        {
+            summaryBtn.GetComponent<Button>().interactable = true;
+            hand2.gameObject.SetActive(true);
+        });
+    }
+
+
     public void SummarizeText()
     {
         startClickHandler.EnableSound();
@@ -112,7 +135,7 @@ public class GameManager : MonoBehaviour
         }
         AudioManager.Instance.PlaySFX("OnClick");
         BodyToSummarize.GetComponent<CanvasGroupAnimator>().TriggerAnimateOut();
-        TaskManager.Instance.RunAfter(1f, () =>
+        TaskManager.Instance.RunAfter(.1f, () =>
         {
             toTap.GetComponent<Canvas>().sortingOrder = 40;
             SummarizedText.SetActive(true);
@@ -123,8 +146,10 @@ public class GameManager : MonoBehaviour
             //transcriptBtnBlue.SetActive(false);
         });
 
-        TaskManager.Instance.RunAfter(2f, () =>
+        TaskManager.Instance.RunAfter(.1f, () =>
         {
+            hand2.gameObject.SetActive(false);
+            summaryBtn.gameObject.SetActive(true);
             //mainPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimateOut();
             handle1.SetActive(true);
             handle1.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
@@ -132,17 +157,17 @@ public class GameManager : MonoBehaviour
             BodyToSummarize.GetComponent<CanvasGroupAnimator>().TriggerAnimateIn();
             filter.gameObject.SetActive(true);
             filter.GetComponent<CanvasGroupAnimator>().TriggerAnimateIn();
-            TaskManager.Instance.RunAfter(1f, () =>
+            TaskManager.Instance.RunAfter(.1f, () =>
             {
                 AudioManager.Instance.PlaySFX("OnDrag");
                 //animator.SetTrigger("StartMaskAnimate");
             });
+        });
 
-            TaskManager.Instance.RunAfter(35f, () =>
-            {
-                endPanel.gameObject.SetActive(true);
-                endPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
-            });
+        TaskManager.Instance.RunAfter(10f, () =>
+        {
+            endPanel.gameObject.SetActive(true);
+            endPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
         });
     }
     public void StartMusic()

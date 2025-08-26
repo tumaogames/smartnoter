@@ -2,7 +2,7 @@
     "version": "6.3.0",
     "projectId": "25cf7bcc16a03234c9bd68200ba66e30",
     "applicationID": 32259,
-    "creativeName": "KeyPoints_Mip2",
+    "creativeName": "KeyPoints_Mip1",
     "pgServer": "EU",
     "window": {
         "‐″": true
@@ -125,7 +125,11 @@
                 "Stubs/IronSource",
                 "Stubs/Vungle",
                 "Stubs/MoreMountains.NiceVibrations",
-                "Assets/TextMesh Pro/Sprites/EmojiOne.png"
+                "Assets/TextMesh Pro/Sprites/EmojiOne.png",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset"
             ],
             "includes": [
                 "Assets/Resources/DOTweenSettings.asset",
@@ -8908,7 +8912,7 @@
                     },
                     {
                         "name": "toString",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "parse",
@@ -22348,7 +22352,7 @@
                     },
                     {
                         "name": "disabledTrigger#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "disabledTrigger#set",
@@ -22546,7 +22550,7 @@
                     },
                     {
                         "name": "disabledColor#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "disabledColor#set",
@@ -22876,7 +22880,7 @@
                     },
                     {
                         "name": "disabledSprite#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "disabledSprite#set",
@@ -29763,6 +29767,14 @@
                     {
                         "name": "StartMusic",
                         "excluded": false
+                    },
+                    {
+                        "name": "StartVoiceOver",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SummarizeText1",
+                        "excluded": false
                     }
                 ]
             },
@@ -32621,6 +32633,10 @@
                     {
                         "name": "OnDrag",
                         "excluded": false
+                    },
+                    {
+                        "name": "OnEndDrag",
+                        "excluded": false
                     }
                 ]
             },
@@ -32918,8 +32934,8 @@
                 "default": {
                     "channels": 1,
                     "startTime": "00:00.000",
-                    "endTime": "00:35.000",
-                    "lengthInSeconds": 35.0,
+                    "endTime": "01:00.000",
+                    "lengthInSeconds": 60.0,
                     "bitrate": 128,
                     "script": "",
                     "ext": ""
