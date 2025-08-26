@@ -1726,13 +1726,13 @@ Deserializers.productName = "core2d";
 
 Deserializers.lunaInitializationTime = "08/14/2025 11:33:59";
 
-Deserializers.lunaDaysRunning = "11.9";
+Deserializers.lunaDaysRunning = "12.0";
 
 Deserializers.lunaVersion = "6.3.0";
 
 Deserializers.lunaSHA = "7c1090235e749b60367a931fd9d8e53ca14842b9";
 
-Deserializers.creativeName = "KeyPoints_Mip1";
+Deserializers.creativeName = "KeyPoints_Mip2";
 
 Deserializers.lunaAppID = "32259";
 
@@ -1782,7 +1782,7 @@ Deserializers.graphicsConstraint = 28;
 
 Deserializers.linearColorSpace = false;
 
-Deserializers.buildID = "9246bed4-fe1b-43a9-a801-1998a349dcef";
+Deserializers.buildID = "96c4e0c1-2bab-4603-be87-a9aa1ad82e50";
 
 Deserializers.runtimeInitializeOnLoadInfos = [[["UnityEngine","Experimental","Rendering","ScriptableRuntimeReflectionSystemSettings","ScriptingDirtyReflectionSystemInstance"]],[],[["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"]],[],[]];
 
