@@ -35,5 +35,7 @@ public class StartClickHandler : MonoBehaviour, IPointerDownHandler
         GameManager.Instance.hand.gameObject.SetActive(false);
         gameObject.SetActive(false);
         GameManager.Instance.enableSound = true;
+        //GameManager.Instance.CTAClicked();
+        //StartCoroutine(GameManager.Instance.Win());
     }
 }

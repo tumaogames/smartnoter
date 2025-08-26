@@ -62,7 +62,8 @@ public class GameManager : MonoBehaviour
     public IEnumerator Win()
     {
         yield return new WaitForSeconds(1);
-        endPanel.SetActive(true);
+        endPanel.gameObject.SetActive(true);
+        endPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimate();
         end = true;
     }
 
@@ -117,9 +118,11 @@ public class GameManager : MonoBehaviour
     public void SummarizeText1()
     {
         StartVoiceOver();
+        AudioManager.Instance.PlaySFX("OnClick");
         startClickHandler.EnableSound();
         TaskManager.Instance.RunAfter(60f, () =>
         {
+            AudioManager.Instance.StopMusic(2);
             summaryBtn.GetComponent<Button>().interactable = true;
             hand2.gameObject.SetActive(true);
         });
@@ -128,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     public void SummarizeText()
     {
-        startClickHandler.EnableSound();
+        //startClickHandler.EnableSound();
         if (hand.gameObject.activeInHierarchy)
         {
             hand.gameObject.SetActive(false);
