@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     public GameObject filter;
     public GameObject arrow;
     public GameObject toTap;
+    public GameObject bodyText;
     public GameObject openingPanel;
 
     private void Awake()
@@ -151,6 +152,8 @@ public class GameManager : MonoBehaviour
 
         TaskManager.Instance.RunAfter(.1f, () =>
         {
+            bodyText.gameObject.SetActive(true);
+            bodyText.GetComponent<CanvasGroupAnimator>().TriggerAnimateIn();
             hand2.gameObject.SetActive(false);
             summaryBtn.gameObject.SetActive(true);
             //mainPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimateOut();

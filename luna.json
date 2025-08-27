@@ -80,8 +80,8 @@
             "externalSources": [],
             "externalJSLibraries": [],
             "scriptingDefines": [],
-            "msbuildVersion": "17.14",
-            "monoVersion": "9.0.7",
+            "msbuildVersion": "17.13",
+            "monoVersion": "9.0.4",
             "dotnetVersion": ""
         },
         "assets": {
@@ -125,7 +125,9 @@
                 "Stubs/MoreMountains.NiceVibrations",
                 "Assets/Audio/OnZoomShort.mp3",
                 "Assets/TextMesh Pro/Fonts/LiberationSans.ttf",
-                "Assets/TextMesh Pro/Sprites/EmojiOne.png"
+                "Assets/TextMesh Pro/Sprites/EmojiOne.png",
+                "Assets/Textures/Transcribe Audio.png",
+                "Assets/Textures/Tap to summarize - CTA.png"
             ],
             "includes": [
                 "Assets/Resources/DOTweenSettings.asset",
