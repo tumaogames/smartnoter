@@ -1,5 +1,5 @@
 /**
- * @version 1.0.9370.1968
+ * @version 1.0.9370.22962
  * @copyright anton
  * @compiler Bridge.NET 17.9.42-luna
  */
@@ -3554,7 +3554,7 @@ Bridge.assembly("UnityScriptsCompiler", function ($asm, globals) {
                 this.StartVoiceOver();
                 AudioManager.Instance.PlaySFX("OnClick");
                 this.startClickHandler.EnableSound();
-                TaskManager.Instance.RunAfter(60.0, Bridge.fn.bind(this, function () {
+                TaskManager.Instance.RunAfter(35.0, Bridge.fn.bind(this, function () {
                     AudioManager.Instance.StopMusic(2);
                     this.summaryBtn.GetComponent(UnityEngine.UI.Button).interactable = true;
                     this.hand2.gameObject.SetActive(true);
@@ -3659,17 +3659,17 @@ Bridge.assembly("UnityScriptsCompiler", function ($asm, globals) {
 
             /*StartClickHandler.EnableSound start.*/
             EnableSound: function () {
-                //AudioManager.Instance.PlayMusic("OnZoom");
+                AudioManager.Instance.PlayMusic("OnZoomShort");
                 this.GetComponent(UnityEngine.UI.Image).raycastTarget = false;
-                //GameManager.Instance.StartMusic();
+                GameManager.Instance.StartMusic();
                 if (UnityEngine.Component.op_Inequality(this.transform.parent, null)) {
-                    //transform.parent.gameObject.SetActive(false);
+                    this.transform.parent.gameObject.SetActive(false);
                 }
-                //GameManager.Instance.hand.gameObject.SetActive(false);
-                //gameObject.SetActive(false);
-                //GameManager.Instance.enableSound = true;
-                GameManager.Instance.CTAClicked();
-                this.StartCoroutine$1(GameManager.Instance.Win());
+                GameManager.Instance.hand.gameObject.SetActive(false);
+                this.gameObject.SetActive(false);
+                GameManager.Instance.enableSound = true;
+                //GameManager.Instance.CTAClicked();
+                //StartCoroutine(GameManager.Instance.Win());
             },
             /*StartClickHandler.EnableSound end.*/
 

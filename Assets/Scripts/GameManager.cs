@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
         StartVoiceOver();
         AudioManager.Instance.PlaySFX("OnClick");
         startClickHandler.EnableSound();
-        TaskManager.Instance.RunAfter(60f, () =>
+        TaskManager.Instance.RunAfter(35f, () =>
         {
             AudioManager.Instance.StopMusic(2);
             summaryBtn.GetComponent<Button>().interactable = true;
