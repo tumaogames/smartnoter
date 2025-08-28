@@ -1,8 +1,8 @@
 {
     "version": "6.3.0",
     "projectId": "25cf7bcc16a03234c9bd68200ba66e30",
-    "applicationID": 0,
-    "creativeName": "",
+    "applicationID": 32259,
+    "creativeName": "KeyPoints_Mip1",
     "pgServer": "EU",
     "window": {
         "‐″": true
@@ -127,7 +127,8 @@
                 "Assets/TextMesh Pro/Fonts/LiberationSans.ttf",
                 "Assets/TextMesh Pro/Sprites/EmojiOne.png",
                 "Assets/Textures/Transcribe Audio.png",
-                "Assets/Textures/Tap to summarize - CTA.png"
+                "Assets/Textures/Tap to summarize - CTA.png",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset"
             ],
             "includes": [
                 "Assets/Resources/DOTweenSettings.asset",
@@ -8486,6 +8487,10 @@
             },
             {
                 "name": "DG.Tweening.Plugins.Core.ITPlugin$4",
+                "excluded": false
+            },
+            {
+                "name": "SubtitleAuto.ScrollMotion",
                 "excluded": false
             }
         ],
@@ -30240,7 +30245,7 @@
                     },
                     {
                         "name": "textInfo#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "havePropertiesChanged#get",
@@ -32655,6 +32660,26 @@
                     {
                         "name": "BuildFullTextAndBoundaries",
                         "excluded": false
+                    },
+                    {
+                        "name": "ScrollFromNextLineBySteps",
+                        "excluded": false
+                    },
+                    {
+                        "name": "BeginScrollTo",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ApplyManualScroll",
+                        "excluded": true
+                    },
+                    {
+                        "name": "RebuildLayout",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetScrollNormalized",
+                        "excluded": false
                     }
                 ]
             },
@@ -32756,9 +32781,9 @@
                 "default": {
                     "channels": 1,
                     "startTime": "00:00.000",
-                    "endTime": "01:05.000",
-                    "lengthInSeconds": 65.0,
-                    "bitrate": 128,
+                    "endTime": "00:00.000",
+                    "lengthInSeconds": 0.0,
+                    "bitrate": 64,
                     "script": "",
                     "ext": ""
                 },

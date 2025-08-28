@@ -1,0 +1,201 @@
+{
+    "BuildID": "c5b00f56-441b-4901-bdc5-161369a3b2d3",
+    "Command": "project:deploy",
+    "ProjectID": "25cf7bcc16a03234c9bd68200ba66e30",
+    "ProjectStateHash": "bd6f893c8757486487e79a103c5a8f43e350e4739442cdef29d2d73d9876f504",
+    "StageCompletedAt": 3,
+    "EarliestFatalError": 0,
+    "StartTime": 1756377384991,
+    "EndTime": 1756377418296,
+    "PlaygroundUserID": 20450,
+    "OperatingSystem": "win32",
+    "UnityPackageID": null,
+    "TargetPlatform": "playground",
+    "UnityVersion": "2022.3.61f1\r",
+    "LunaVersion": "6.3.0",
+    "LogCount": 8,
+    "Logs": [
+        {
+            "LogID": "ae975282-880e-423a-9c8d-a014cc685255",
+            "Order": 4,
+            "Timestamp": 1756377418506,
+            "Stage": 3,
+            "ErrorType": 0,
+            "ErrorCode": "LP3005",
+            "Description": "You are using a Luna reserved keyword: Handle",
+            "Details": [
+                "You are using a reserved keyword: Handle for Luna. Please change the name of the field/class"
+            ],
+            "DescriptionValues": [
+                "Handle"
+            ],
+            "DetailsValues": [
+                "Handle"
+            ],
+            "LogCount": 1,
+            "LinePosition": 10,
+            "FilePath": "D:\\UnityProjects\\SmartNoter_KeyPoints\\Assets\\Scripts\\DragToResizeLeft.cs",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "de69dae5-ca06-4310-923c-5d4368bea189",
+            "Order": 4,
+            "Timestamp": 1756377418565,
+            "Stage": 3,
+            "ErrorType": 0,
+            "ErrorCode": "LP3005",
+            "Description": "You are using a Luna reserved keyword: Tag",
+            "Details": [
+                "You are using a reserved keyword: Tag for Luna. Please change the name of the field/class"
+            ],
+            "DescriptionValues": [
+                "Tag"
+            ],
+            "DetailsValues": [
+                "Tag"
+            ],
+            "LogCount": 1,
+            "LinePosition": 171,
+            "FilePath": "D:\\UnityProjects\\SmartNoter_KeyPoints\\Assets\\Scripts\\SubtitleAuto.cs",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "69d4ad7c-9fc1-4836-8a5d-a2cb556ca247",
+            "Order": 4,
+            "Timestamp": 1756377418591,
+            "Stage": 3,
+            "ErrorType": 1,
+            "ErrorCode": "LP3015",
+            "Description": "You are not the Game Ended API: LifeCycle.GameEnded",
+            "Details": [
+                "You are not using the Game Ended API: LifeCycle.GameEnded. Some ad networks require this call, please add the event to avoid the ad being rejected."
+            ],
+            "DescriptionValues": [
+                "LifeCycle",
+                "GameEnded"
+            ],
+            "DetailsValues": [
+                "LifeCycle",
+                "GameEnded"
+            ],
+            "LogCount": 1,
+            "LinePosition": null,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "d74b9792-1465-46f1-9e0c-bd1086211e57",
+            "Order": 4,
+            "Timestamp": 1756377418591,
+            "Stage": 3,
+            "ErrorType": 3,
+            "ErrorCode": "LP3007",
+            "Description": "You are not using any custom events",
+            "Details": [
+                "You are not using any custom events. It is recommended to use custom events to have a better understanding of the playable."
+            ],
+            "DescriptionValues": [
+                ""
+            ],
+            "DetailsValues": [
+                ""
+            ],
+            "LogCount": 1,
+            "LinePosition": null,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "2db7d679-6d53-40ee-a7fa-8f18dd871a8b",
+            "Order": 4,
+            "Timestamp": 1756377418593,
+            "Stage": 3,
+            "ErrorType": 3,
+            "ErrorCode": "LP3011",
+            "Description": "You are not using any LunaPlaygroundFields attributes.",
+            "Details": [
+                "You are not using any LunaPlaygroundFields attributes, it allows you to configure your playable to different concepts to find the best variation, which can drastically improve playable performance on all ad networks."
+            ],
+            "DescriptionValues": null,
+            "DetailsValues": null,
+            "LogCount": 1,
+            "LinePosition": null,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "bcaa63c6-a593-4044-9ca9-aac312b60e23",
+            "Order": 0,
+            "Timestamp": 1756377390258,
+            "Stage": 1,
+            "ErrorType": 2,
+            "ErrorCode": "LP1014",
+            "Description": "We recommend running Runtime Analysis to find and remove all unused code",
+            "Details": [
+                "Navigate to the Runtime Analysis → Code tab to enable code stripping. Before uploading the playable, please make sure to have played all scenario’s of the playable in a development build to make Runtime Analysis work properly."
+            ],
+            "DescriptionValues": [],
+            "DetailsValues": [],
+            "LogCount": 1,
+            "LinePosition": 0,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "9ce7d38f-1c61-4abf-8da3-f532a5ad2e91",
+            "Order": 1,
+            "Timestamp": 1756377390263,
+            "Stage": 1,
+            "ErrorType": 0,
+            "ErrorCode": "LP1027",
+            "Description": "This DOTween version is not supported",
+            "Details": [
+                "The incorrect DOTween version for this Unity version is in use, please update or downgrade to the recommended version {0} in the package manager. Go to Window → Package Manager."
+            ],
+            "DescriptionValues": [],
+            "DetailsValues": [
+                ""
+            ],
+            "LogCount": 1,
+            "LinePosition": 0,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "b9df2c1e-a0e7-4f55-a437-5ba1aedcc07c",
+            "Order": 2,
+            "Timestamp": 1756377390263,
+            "Stage": 1,
+            "ErrorType": 0,
+            "ErrorCode": "LP1015",
+            "Description": "This TMP version is not fully supported",
+            "Details": [
+                "The incorrect Text Mesh Pro for this Unity version is in use, please update or downgrade to the recommended version {0} in the package manager. Go to Window → Package Manager"
+            ],
+            "DescriptionValues": [],
+            "DetailsValues": [
+                ""
+            ],
+            "LogCount": 1,
+            "LinePosition": 0,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        }
+    ]
+}

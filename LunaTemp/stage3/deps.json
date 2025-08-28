@@ -44,6 +44,7 @@
       "D:/UnityProjects/SmartNoter_KeyPoints/LunaTemp/stage3/processed-scripts/Assets/Scripts/TaskManager/TaskManager.cs",
       "D:/UnityProjects/SmartNoter_KeyPoints/LunaTemp/stage3/processed-scripts/Assets/Scripts/TaskManager/TaskSequencePool.cs",
       "D:/UnityProjects/SmartNoter_KeyPoints/LunaTemp/stage3/processed-scripts/Assets/Scripts/TaskManager/TaskSequencePro.cs",
+      "D:/UnityProjects/SmartNoter_KeyPoints/LunaTemp/stage3/processed-scripts/Assets/Scripts/SubtitleAuto.cs",
       "D:/UnityProjects/SmartNoter_KeyPoints/LunaTemp/stage3/processed-scripts/Assets/Scripts/AudioManager/Scripts/Core/Services/IAudioService.cs",
       "D:/UnityProjects/SmartNoter_KeyPoints/LunaTemp/stage3/processed-scripts/Assets/Scripts/AudioManager/Scripts/Core/Services/ServicesLocator.cs"
     ],
@@ -74,9 +75,6 @@
     ],
     [
       "D:/UnityProjects/SmartNoter_KeyPoints/LunaTemp/stage3/processed-scripts/Assets/Scripts/PromtPopUp.cs"
-    ],
-    [
-      "D:/UnityProjects/SmartNoter_KeyPoints/LunaTemp/stage3/processed-scripts/Assets/Scripts/SubtitleAuto.cs"
     ],
     [
       "D:/UnityProjects/SmartNoter_KeyPoints/Playworks/pipeline/templates/LunaCompiler/Scripts/Properties/AssemblyInfo.cs"

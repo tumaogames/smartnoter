@@ -37,8 +37,10 @@ public class GameManager : MonoBehaviour
     public GameObject filter;
     public GameObject arrow;
     public GameObject toTap;
-    public GameObject bodyText;
+    //public GameObject bodyText;
     public GameObject openingPanel;
+    public GameObject subTitle;
+    public GameObject scrollBarVertical;
 
     private void Awake()
     {
@@ -123,7 +125,7 @@ public class GameManager : MonoBehaviour
         startClickHandler.EnableSound();
         TaskManager.Instance.RunAfter(60f, () =>
         {
-            AudioManager.Instance.StopMusic(2);
+            //AudioManager.Instance.StopMusic(2);
             summaryBtn.GetComponent<Button>().interactable = true;
             hand2.gameObject.SetActive(true);
         });
@@ -132,6 +134,8 @@ public class GameManager : MonoBehaviour
 
     public void SummarizeText()
     {
+        subTitle.GetComponent<SubtitleAuto>().enabled = false;
+        scrollBarVertical.GetComponent<Scrollbar>().value = 1;
         //startClickHandler.EnableSound();
         if (hand.gameObject.activeInHierarchy)
         {
@@ -152,8 +156,8 @@ public class GameManager : MonoBehaviour
 
         TaskManager.Instance.RunAfter(.1f, () =>
         {
-            bodyText.gameObject.SetActive(true);
-            bodyText.GetComponent<CanvasGroupAnimator>().TriggerAnimateIn();
+            //bodyText.gameObject.SetActive(true);
+            //bodyText.GetComponent<CanvasGroupAnimator>().TriggerAnimateIn();
             hand2.gameObject.SetActive(false);
             summaryBtn.gameObject.SetActive(true);
             //mainPanel.GetComponent<CanvasGroupAnimator>().TriggerAnimateOut();
