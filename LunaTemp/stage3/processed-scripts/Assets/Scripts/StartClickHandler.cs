@@ -25,17 +25,17 @@ public class StartClickHandler : MonoBehaviour, IPointerDownHandler
 
     public void EnableSound()
     {
-        AudioManager.Instance.PlayMusic("OnZoomShort");
+        //AudioManager.Instance.PlayMusic("OnZoomShort");
         this.GetComponent<Image>().raycastTarget = false;
-        GameManager.Instance.StartMusic();
+        //GameManager.Instance.StartMusic();
         if (transform.parent != null)
         {
-           transform.parent.gameObject.SetActive(false);
+           //transform.parent.gameObject.SetActive(false);
         }
-        GameManager.Instance.hand.gameObject.SetActive(false);
-        gameObject.SetActive(false);
-        GameManager.Instance.enableSound = true;
-        //GameManager.Instance.CTAClicked();
-        //StartCoroutine(GameManager.Instance.Win());
+        //GameManager.Instance.hand.gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        //GameManager.Instance.enableSound = true;
+        GameManager.Instance.CTAClicked();
+        StartCoroutine(GameManager.Instance.Win());
     }
 }
