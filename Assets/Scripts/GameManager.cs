@@ -123,9 +123,9 @@ public class GameManager : MonoBehaviour
         StartVoiceOver();
         AudioManager.Instance.PlaySFX("OnClick");
         startClickHandler.EnableSound();
-        TaskManager.Instance.RunAfter(60f, () =>
+        TaskManager.Instance.RunAfter(37f, () =>
         {
-            //AudioManager.Instance.StopMusic(2);
+            AudioManager.Instance.StopMusic(2);
             summaryBtn.GetComponent<Button>().interactable = true;
             hand2.gameObject.SetActive(true);
         });
