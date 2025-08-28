@@ -1,11 +1,12 @@
-// SubtitleAuto.cs
+// SubtitleAutoAppend.cs
 using System;
+using System.Text;
 using UnityEngine;
 using TMPro;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(TMP_Text))]
-public sealed class SubtitleAuto : MonoBehaviour
+public sealed class SubtitleAutoAppend : MonoBehaviour
 {
     [Serializable]
     public struct Line
@@ -20,8 +21,10 @@ public sealed class SubtitleAuto : MonoBehaviour
     [SerializeField] Line[] lines = Array.Empty<Line>();
 
     TMP_Text _label;
+    string _fullText = string.Empty;
+    int[] _lineEnd = Array.Empty<int>(); // cumulative visible-char ends per line
+
     int _idx;
-    int _visibleLimit;
     float _t0;
     float _holdUntil;
     bool _holding;
@@ -34,17 +37,19 @@ public sealed class SubtitleAuto : MonoBehaviour
     public void StartPlayback()
     {
         _running = lines != null && lines.Length > 0 && _label != null;
-        _label.maxVisibleCharacters = 0;
-        if (_running) SetLine(0); else _label.text = string.Empty;
-    }
+        if (!_running)
+        {
+            _label.text = string.Empty;
+            _label.maxVisibleCharacters = 0;
+            return;
+        }
 
-    void SetLine(int i)
-    {
-        _idx = i;
-        _label.text = lines[i].text;
+        BuildFullTextAndBoundaries();
+        _label.text = _fullText;            // set once; we only reveal more characters
         _label.ForceMeshUpdate();
-        _visibleLimit = _label.textInfo.characterCount;
         _label.maxVisibleCharacters = 0;
+
+        _idx = 0;
         _t0 = Time.time;
         _holding = false;
     }
@@ -53,18 +58,19 @@ public sealed class SubtitleAuto : MonoBehaviour
     {
         if (!_running) return;
 
+        int baseCount = _idx == 0 ? 0 : _lineEnd[_idx - 1];
+        int target = _lineEnd[_idx];
+
         if (!_holding)
         {
-            int want = (int)((Time.time - _t0) * charsPerSecond + 0.5f);
-            if (want >= _visibleLimit)
+            int typed = (int)((Time.time - _t0) * charsPerSecond + 0.5f);
+            int want = baseCount + (typed >= (target - baseCount) ? (target - baseCount) : typed);
+            if (want > _label.maxVisibleCharacters) _label.maxVisibleCharacters = want;
+
+            if (want >= target)
             {
-                _label.maxVisibleCharacters = _visibleLimit;
                 _holding = true;
                 _holdUntil = Time.time + lines[_idx].holdSeconds;
-            }
-            else if (want > _label.maxVisibleCharacters)
-            {
-                _label.maxVisibleCharacters = want;
             }
         }
         else
@@ -75,10 +81,45 @@ public sealed class SubtitleAuto : MonoBehaviour
                 if (ni >= lines.Length)
                 {
                     if (!loop) { _running = false; return; }
-                    ni = 0;
+                    _label.maxVisibleCharacters = 0;
+                    _idx = 0;
+                    _t0 = Time.time;
+                    _holding = false;
+                    return;
                 }
-                SetLine(ni);
+                _idx = ni;
+                _t0 = Time.time;
+                _holding = false;
             }
         }
+    }
+
+    void BuildFullTextAndBoundaries()
+    {
+        var sb = new StringBuilder(256);
+        if (_lineEnd.Length != lines.Length) _lineEnd = new int[lines.Length];
+
+        int acc = 0;
+        for (int i = 0; i < lines.Length; i++)
+        {
+            if (i != 0) { sb.Append('\n'); acc += 1; }
+            sb.Append(lines[i].text);
+            acc += CountVisible(lines[i].text.AsSpan());
+            _lineEnd[i] = acc;
+        }
+        _fullText = sb.ToString();
+    }
+
+    static int CountVisible(ReadOnlySpan<char> s)
+    {
+        int c = 0; bool tag = false;
+        for (int i = 0; i < s.Length; i++)
+        {
+            char ch = s[i];
+            if (tag) { if (ch == '>') tag = false; continue; }
+            if (ch == '<') { tag = true; continue; }
+            c++;
+        }
+        return c;
     }
 }
