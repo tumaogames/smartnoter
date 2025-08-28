@@ -2424,14 +2424,14 @@ MonoBehaviour:
   - text: Makes sense.
     holdSeconds: 0.5
   - text: What about audience segments?
-    holdSeconds: 1
+    holdSeconds: 1.5
   - text: Any surprises there?
-    holdSeconds: 1
+    holdSeconds: 2
   - text: Actually, yes, the younger group responded better than the older group,
       which is the opposite of what we expected.
     holdSeconds: 7
   - text: Interesting.
-    holdSeconds: 2
+    holdSeconds: 1
   - text: Maybe the visuals appealed more to a younger demographic.
     holdSeconds: 2
   - text: Possibly.
@@ -2441,25 +2441,25 @@ MonoBehaviour:
   - text: It was a bit more playful than our usual style.
     holdSeconds: 1
   - text: Do you think we should lean into that for the next campaign?
-    holdSeconds: 1.5
+    holdSeconds: 2
   - text: I think we should test it.
     holdSeconds: 1
   - text: Maybe we can run a split test, one with a playful tone, one more traditional.
-    holdSeconds: 2
+    holdSeconds: 4
   - text: I like that, and we should also keep an eye on cost per acquisition.
-    holdSeconds: 2
+    holdSeconds: 3
   - text: If we can get it down by even ten percent, that's a big win.
-    holdSeconds: 2
+    holdSeconds: 3
   - text: Agreed.
     holdSeconds: 1
   - text: Oh, and one more thing, the retargeting ads performed way better than expected.
-    holdSeconds: 2
+    holdSeconds: 3
   - text: Really?
     holdSeconds: 1
   - text: Yeah, conversion rates were up compared to last month.
-    holdSeconds: 2
+    holdSeconds: 3
   - text: We might want to increase the retargeting budget next quarter.
-    holdSeconds: 2
+    holdSeconds: 3
   - text: Got it.
     holdSeconds: 1
   - text: I'll make a note of that.
@@ -2468,7 +2468,7 @@ MonoBehaviour:
     holdSeconds: 1
   - text: Just that we need to finalize the content calendar by Friday, that way
       we can hit the ground running for the next cycle.
-    holdSeconds: 4
+    holdSeconds: 5
   - text: Perfect.
     holdSeconds: 1
   - text: I'll draft it up and send it over later today.
