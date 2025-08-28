@@ -375,7 +375,7 @@ MonoBehaviour:
     - UNITY_UI_ALPHACLIP
   _includedShaderVariants: []
   _excludedShaderVariants: []
-  version: 1293
+  version: 1320
   _shaderParsedShaders:
   - ParsedSubShaders:
     - Index: 0
